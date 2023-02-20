@@ -77,9 +77,9 @@
   },
   "dependencies": {
     "gray-matter": "^4.0.3",
+    "js-yaml": "3.14.1",
     "marked": "^4.2.12",
-    "marked-admonition-extension": "^0.0.2",
-    "js-yaml": "^3.14.2"
+    "marked-admonition-extension": "^0.0.2"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.4.4",
