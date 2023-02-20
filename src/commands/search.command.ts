@@ -1,4 +1,4 @@
-import { window, env, QuickInputButton, QuickPickItem, ThemeIcon, ViewColumn, QuickPickItemButtonEvent } from 'vscode';
+import { window, env, QuickInputButton, QuickPickItem, ViewColumn, QuickPickItemButtonEvent, ThemeIcon } from 'vscode';
 import { Indexer } from '../obsidian/indexer';
 import { marked } from 'marked';
 import admonition from 'marked-admonition-extension';
@@ -20,6 +20,9 @@ class DocumentQuickPickItem implements QuickPickItem {
     this.detail = doc.location;
     this.buttons = [
       {
+        // TODO uggly hack!! this works when running the extension, but TSC complains about it. Need to figure out how to fix this.
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-ignore
         iconPath: new ThemeIcon('link-external'),
         tooltip: 'Open in Obsidian',
       },
