@@ -2,7 +2,7 @@
   "name": "vscode-obsidianmd",
   "displayName": "ObsidianMD",
   "description": "Search in your Obsidian vault directly from VSCode",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "icon": "icon.png",
   "author": {
     "name": "Bruno Paz",
