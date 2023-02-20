@@ -1,0 +1,7 @@
+out
+node_modules
+*.log
+junit.xml
+reports
+dist
+coverage

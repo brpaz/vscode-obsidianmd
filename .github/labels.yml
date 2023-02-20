@@ -1,0 +1,27 @@
+- name: bug
+  description: Something isn't working
+  color: d73a4a
+- name: documentation
+  description: Improvements or additions to documentation
+  color: 0075ca
+- name: duplicate
+  description: This issue or pull request already exists
+  color: cfd3d7
+- name: security
+  description: Security updates
+  color: a31f34
+- name: feature
+  description: New feature
+  color: 0e8a16
+- name: enhancement
+  description: Enhancement on existing Feature
+  color: 0e8a16
+- name: chore
+  description: Maintenance
+  color: F6EE8F
+- name: dependencies
+  description: Dependencies
+  color: F6EE8F
+- name: broken-docs
+  description: Broken documentation
+  color: d73a4a

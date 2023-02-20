@@ -1,0 +1,119 @@
+{
+  "name": "vscode-obsidianmd",
+  "displayName": "ObsidianMD",
+  "description": "Search in your Obsidian vault directly from VSCode",
+  "version": "0.1.0",
+  "icon": "icon.png",
+  "author": {
+    "name": "Bruno Paz",
+    "email": "oss@brunopaz.dev",
+    "url": "https://brunopaz.dev"
+  },
+  "repository": {
+    "url": "https://github.com/brpaz/vscode-obsidianmd",
+    "type": "git"
+  },
+  "publisher": "brpaz",
+  "engines": {
+    "vscode": "^1.52.0",
+    "node": ">=16"
+  },
+  "categories": [
+    "Other"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "obsidianmd.search",
+        "title": "Search in vault",
+        "category": "ObsidianMD"
+      },
+      {
+        "command": "obsidianmd.index",
+        "title": "Index vault",
+        "category": "ObsidianMD",
+        "icon": "${code}"
+      }
+    ],
+    "configuration": {
+      "title": "ObsidianMD",
+      "properties": {
+        "obsidianmd.vaultPath": {
+          "type": "string",
+          "default": "",
+          "description": "Path to your Obsidian vault"
+        },
+        "obsidianmd.excludedDirectories": {
+          "type": "array",
+          "default": [],
+          "description": "A list of Vault directories that will be excluded from the index"
+        },
+        "obsidianmd.includeOnlyWithFrontmatterKey": {
+          "type": "boolean",
+          "default": false,
+          "description": "If this option is set to true only notes with frontmatter key \"brpaz.vscode-obsidianmd/include: true\" will be indexed"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "prepare": "husky install",
+    "vscode:prepublish": "yarn run compile",
+    "compile": "tsc -p ./ && cp -R schemas out/schemas",
+    "lint": "eslint src --ext ts",
+    "lint:fix": "eslint src --ext ts --fix",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "format:check": "prettier check \"src/**/*.ts\"",
+    "watch": "tsc -watch -p ./",
+    "test": "jest",
+    "test:report:jest": "serve ./reports/jest",
+    "test:report:coverage": "serve ./reports/coverage/lcov-report",
+    "package": "rimraf dist && mkdir -p dist && vsce package -o dist/",
+    "vsce:publish": "vsce publish -i dist/*.vsix"
+  },
+  "dependencies": {
+    "gray-matter": "^4.0.3",
+    "marked": "^4.2.12",
+    "marked-admonition-extension": "^0.0.2"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.4.2",
+    "@commitlint/config-conventional": "^17.4.2",
+    "@types/jest": "^29.4.0",
+    "@types/marked": "^4.0.8",
+    "@types/node": "^16.18.11",
+    "@types/vscode": "^1.52.0",
+    "@types/yaml": "^1.9.7",
+    "@typescript-eslint/eslint-plugin": "^5.48.1",
+    "@typescript-eslint/parser": "^5.48.1",
+    "chalk": "^4.1.2",
+    "eslint": "^8.32.0",
+    "eslint-config-prettier": "^8.6.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "husky": "^8.0.3",
+    "jest": "^29.3.1",
+    "jest-html-reporter": "^3.7.0",
+    "jest-junit": "^15.0.0",
+    "jest-mock-extended": "^3.0.1",
+    "lint-staged": "^13.1.0",
+    "prettier": "^2.8.3",
+    "rimraf": "^4.1.2",
+    "serve": "^14.2.0",
+    "ts-jest": "^29.0.5",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.9.4",
+    "vsce": "^2.15.0",
+    "vscode": "^1.1.37"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "jest-junit": {
+    "suiteNameTemplate": "{filepath}",
+    "classNameTemplate": "{classname}",
+    "titleTemplate": "{title}"
+  }
+}

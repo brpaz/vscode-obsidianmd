@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "ES2021",
+    "outDir": "out",
+    "lib": ["ES2021"],
+    "sourceMap": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "noImplicitReturns": true,
+    "noImplicitAny": true
+  },
+  "include": ["src/**/*", "schemas"],
+  "exclude": ["node_modules", "**/node_modules/*", "src/scripts", "**/__mocks__/*"]
+}
