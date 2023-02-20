@@ -27,10 +27,10 @@ export class Indexer {
   }
 
   index() {
-    console.log(`Indexing vault: ${this.vaultPath}`);
+    console.log(`ObsidianMD: Indexing vault at: ${this.vaultPath}`);
 
     if (!fs.existsSync(this.vaultPath)) {
-      throw new Error(`Vault path does not exist: ${this.vaultPath}`);
+      throw new Error(`ObsidianMD: Vault path does not exist: ${this.vaultPath}`);
     }
 
     const files = this.readMarkdownFiles(this.vaultPath);
@@ -48,7 +48,7 @@ export class Indexer {
 
     this.documents.sort((a, b) => a.title.localeCompare(b.title));
 
-    console.log(`Vault indexed with ${this.documents.length} documents`);
+    console.log(`ObsidianMD: Vault indexed with ${this.documents.length} documents`);
   }
 
   getDocuments(): Document[] {
@@ -75,11 +75,18 @@ export class Indexer {
       // Get the full path of the file
       const filePath = path.join(dirPath, fileName);
 
+      const inVaultPath = dirPath.replaceAll(this.vaultPath, '').replace('/', '');
+
+      // Check if the file is in the ignore list
+      const isExcluded = this.foldersToIgnore.some((excludedPath) => inVaultPath.startsWith(excludedPath));
+
+      if (isExcluded) {
+        console.log('ObsidianMD: Vault folder excluded:' + inVaultPath);
+        continue;
+      }
+
       // Check if the file is a directory
       if (fs.statSync(filePath).isDirectory()) {
-        if (this.foldersToIgnore.includes(path.basename(filePath))) {
-          continue;
-        }
         // Recursively call the function to read Markdown files in the subdirectory
         markdownFiles.push(...this.readMarkdownFiles(filePath));
       } else {
