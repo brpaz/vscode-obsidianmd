@@ -12,6 +12,7 @@ on:
 
 env:
   CI: "true"
+  HUSKY: "0"
 
 jobs:
   build-test:
