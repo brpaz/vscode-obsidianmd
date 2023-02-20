@@ -3,8 +3,8 @@
 > A [Visual Studio Extension](https://code.visualstudio.com/) for quick access your [Obsidian.md](https://obsidian.md/) vault, directly from your editor.
 
 [![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/brpaz/vscode-obsidianmd/ci.yml?style=for-the-badge)](github.com/brpaz/vscode-obsidianmd/actions/workflows/ci.yml)
-[![Visual Studio Marketplace Installs](https://img.shields.io/visual-studio-marketplace/r/brpaz.brpaz.vscode-obsidianmd?style=for-the-badge)](https://marketplace.visualstudio.com/items?itemName=brpaz.vscode-obsidianmd)
-[![Visual Studio Marketplace Rating](https://img.shields.io/visual-studio-marketplace/r/b?style=for-the-badge)](https://marketplace.visualstudio.com/items?itemName=brpaz.vscode-obsidianmd)
+[![Visual Studio Marketplace Installs](https://img.shields.io/visual-studio-marketplace/i/brpaz.vscode-obsidianmd?style=for-the-badge)](https://marketplace.visualstudio.com/items?itemName=brpaz.vscode-obsidianmd)
+[![Visual Studio Marketplace Rating](https://img.shields.io/visual-studio-marketplace/r/brpaz.vscode-obsidianmd?style=for-the-badge)](https://marketplace.visualstudio.com/items?itemName=brpaz.vscode-obsidianmd)
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](LICENSE)
 
 
