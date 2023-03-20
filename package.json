@@ -89,7 +89,7 @@
     "@types/node": "^18.14.0",
     "@types/vscode": "^1.75.1",
     "@types/yaml": "^1.9.7",
-    "@typescript-eslint/eslint-plugin": "^5.52.0",
+    "@typescript-eslint/eslint-plugin": "^5.55.0",
     "@typescript-eslint/parser": "^5.48.1",
     "chalk": "^5.2.0",
     "eslint": "^8.34.0",
