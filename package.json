@@ -92,7 +92,7 @@
     "@typescript-eslint/eslint-plugin": "^5.52.0",
     "@typescript-eslint/parser": "^5.48.1",
     "chalk": "^5.2.0",
-    "eslint": "^8.34.0",
+    "eslint": "^8.40.0",
     "eslint-config-prettier": "^8.6.0",
     "eslint-plugin-prettier": "^4.2.1",
     "husky": "^8.0.3",
